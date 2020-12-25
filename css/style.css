@@ -107,6 +107,10 @@ h6 {
       max-width: none;
       padding: 0 10px; } }
 
+header {
+  padding: 29px 0px 33px 0px;
+  background-color: #fff; }
+
 .header-top {
   display: -webkit-box;
   display: -moz-box;
