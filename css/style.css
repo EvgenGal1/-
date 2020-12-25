@@ -106,3 +106,43 @@ h6 {
     .container {
       max-width: none;
       padding: 0 10px; } }
+
+.header-top {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.header-top-lang {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0; }
+
+.header-top-lang__item {
+  display: block;
+  line-height: 19px;
+  color: #000;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: Bebas;
+  letter-spacing: 1px;
+  padding: 0px 4px;
+  margin: 0px 10px 0px 0px; }
+  .header-top-lang__item.active {
+    background-color: #000000;
+    color: #fff; }
+
+.header-top__link {
+  @fontfamily2;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 15px;
+  color: #000; }
