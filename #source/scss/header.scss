@@ -18,7 +18,7 @@ header {
   display: block;
   line-height: 19px;
   color: #000;
-  font-size: 10px;
+  font-size: 14px;
   text-transform: uppercase;
   font-family: Bebas;
   letter-spacing: 1px;
@@ -30,27 +30,73 @@ header {
   }
 }
 .header-top__link {
-  @fontfamily2;
+  font-family: $fontfamily2;
   text-transform: uppercase;
   text-decoration: underline;
   font-size: 15px;
   color: #000;
 }
 .header-bottom {
+  @include flexbox();
+  align-items: center;
+  margin: -10px 0px 0px 0px;
 }
 .header-bottom__column {
+  flex: 0 0 33.333%;
 }
 .header-bottom-menu {
+  &--rigrh {
+    .header-bottom-menu-list {
+      @include flexbox();
+      margin: 0;
+      justify-content: flex-end;
+      text-align: right;
+      li {
+        margin: 0px 0px 0px 45px;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      &:last-child {
+        margin: 0px 0px 0px 45px;
+      }
+    }
+  }
 }
 .header-bottom-menu-list {
+  @include flexbox();
+  // margin: 0px -22.5px;
+  // убрали из-за не соответствия размеров относительно макета
+  // justify-content: space-between;
+  li {
+    margin: 0px 45px 0px 0px;
+    &:last-child {
+      margin: 0px 0px 0px 0px;
+    }
+  }
 }
 .header-bottom-menu__link {
+  font-family: $fontfamily2;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000;
 }
 .header-logo {
+  display: block;
+  text-align: center;
 }
 .header-logo__text {
+  display: block;
+  font-family: $fontfamily1;
+  font-size: 10px;
+  letter-spacing: 8px;
+  color: #000;
+  text-transform: uppercase;
 }
 .header-logo__image {
+  display: inline-block;
+  margin: 13px 0px 22px 0px;
 }
 
 //=====================================================
