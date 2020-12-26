@@ -57,6 +57,7 @@ header {
           margin: 0;
         }
       }
+      // до первого брекпоинта
       &:last-child {
         margin: 0px 0px 0px 45px;
       }
@@ -72,6 +73,11 @@ header {
     margin: 0px 45px 0px 0px;
     &:last-child {
       margin: 0px 0px 0px 0px;
+      // адаптив
+      @media (max-width: $md1+px) {
+        // обращаемся к 1му брекпоинту. меняем отступы
+        margin: 0px 20px 0px 0px;
+      }
     }
   }
 }
