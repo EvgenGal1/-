@@ -1,0 +1,1 @@
+function adaptive_function(e,a){var n=$("header-menu"),d=$(".header-top-lang");e<767?d.hasClass("done")||d.addClass("done").appendTo(n):d.hasClass("done")&&d.removeClass("done").prependTo($(".header-top"))}$(windows).resize(function(e){adaptive_function()});

@@ -90,7 +90,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 // // font-display: swap;
 // // </Подключаем шрифты>
 
@@ -106,7 +105,9 @@ $minwidth: 320px;
 // размер цент области
 $mw: 880;
 $md1: $mw + 12;
-$md2: 992.98;
+// до бургера
+// $md2: 992.98;
+$md2: 750;
 $md3: 767.98;
 $md4: 479.98;
 // </ПЕРЕМЕННЫЕ>
@@ -150,23 +151,23 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-// body {
-// 	font-size: 100%;
-// 	line-height: 1;
-// 	font-size: 14px;
-// 	font-family: $fontfamily;
-// 	-ms-text-size-adjust: 100%;
-// 	-moz-text-size-adjust: 100%;
-// 	-webkit-text-size-adjust: 100%;
-// 	&.lock {
-// 		overflow: hidden;
-// 		@media (max-width: $md3+px) {
-// 			width: 100%;
-// 			position: fixed;
-// 			overflow: hidden;
-// 		}
-// 	}
-// }
+body {
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  font-family: $fontfamily;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  &.lock {
+    overflow: hidden;
+    @media (max-width: $md3+px) {
+      width: 100%;
+      position: fixed;
+      overflow: hidden;
+    }
+  }
+}
 input,
 button,
 textarea {
@@ -215,23 +216,27 @@ h6 {
   min-height: 100%;
   overflow: hidden;
   // &.loader{
-
   // }
 }
 //</ОБОЛОЧКА>
 
 //<ОСНОВНАЯ СЕТКА>
+// Брекпоинт - точка в которой идет переход от одной ширины к другой.
+// Здесь настроена основная сетка с помощь переменных и заготовленых пераметров. При ширине 880 + 12 срабатывает 1 брейкпоинт. Стандартно 1й брейк на 970px а здесь он уже на 880px
 .container {
   max-width: $mw + px;
   margin: 0 auto;
   width: 100%;
+  // можно пропустить так как ширина 880
+  // @media (max-width: $md1+px) {
+  //   max-width: 970px;
+  // }
+  // ширина container на 1ом брейк станет 750
   @media (max-width: $md1+px) {
-    max-width: 970px;
-  }
-  @media (max-width: $md2+px) {
     max-width: 750px;
   }
-  @media (max-width: $md3+px) {
+  // при 768 будет схлоп в бургер
+  @media (max-width: $md2+px) {
     max-width: none;
     padding: 0 10px;
   }
