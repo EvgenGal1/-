@@ -2,6 +2,9 @@
 header {
   padding: 29px 0px 33px 0px;
   background-color: #fff;
+  @media (max-width: $md2+px) {
+    padding: 5px 0px 5px 0px;
+  }
 }
 //=====================================================
 // вставить все классы из html -> выделить всё в html -> ctrl+alt+1 (кратко) или 2 (развернуто) -> вставить в css
@@ -10,9 +13,17 @@ header {
   @include flexbox();
   // разброс в разные стороны
   justify-content: space-between;
+  // появился после адаптива для выравнивания с бургером
+  padding: 15px 0px 0px 0px;
+  @media (max-width: $md2+px) {
+    justify-content: flex-end;
+  }
 }
 .header-top-lang {
   @include flexbox();
+  @media (max-width: $md2+px) {
+    margin: 0px 0px 15px 0px;
+  }
 }
 .header-top-lang__item {
   display: block;
@@ -35,11 +46,26 @@ header {
   text-decoration: underline;
   font-size: 15px;
   color: #000;
+  // достаём из под меню z-indexом ссылку
+  position: relative;
+  z-index: 11;
+  @media (max-width: $md4+px) {
+    font-size: 13px;
+    // моё
+    // добавил бы тег br через js или css в "header-top__link">Online <br> ordering, чтоб сократить длине самой ссылки
+    // выровнял бы по высоте ссылку с бургером
+    // position: absolute;
+    // margin-top: 12px;
+  }
 }
 .header-bottom {
   margin: -10px 0px 0px 0px;
   @include flexbox();
   align-items: center;
+  @media (max-width: $md2+px) {
+    // было -12. увеличели на 15 изза padding: 15 в .header-top
+    margin: -27px 0px 0px 0px;
+  }
 }
 .header-bottom__column {
   flex: 0 0 33.333%;
@@ -61,6 +87,17 @@ header {
           margin: 0px 0px 0px 20px !important;
         }
       }
+      // отменяем горизон flex, делаем вертикал списом и добавляем отступы
+      @media (max-width: $md2+px) {
+        display: block;
+        text-align: left;
+        li {
+          margin: 0px 0px 15px 0px !important;
+          &:last-child {
+            margin: 0px 0px 0px 0px;
+          }
+        }
+      }
     }
   }
 }
@@ -80,6 +117,16 @@ header {
       margin: 0px 20px 0px 0px;
     }
   }
+  // отменяем горизон flex, делаем вертикал списом и добавляем отступы
+  @media (max-width: $md2+px) {
+    display: block;
+    li {
+      margin: 0px 0px 15px 0px !important;
+      &:last-child {
+        margin: 0px 0px 0px 0px;
+      }
+    }
+  }
 }
 .header-bottom-menu__link {
   font-family: $fontfamily2;
@@ -91,6 +138,9 @@ header {
 .header-logo {
   display: block;
   text-align: center;
+  // достаём из под меню z-indexом логотип
+  position: relative;
+  z-index: 11;
 }
 .header-logo__text {
   display: block;
@@ -99,13 +149,31 @@ header {
   letter-spacing: 8px;
   color: #000;
   text-transform: uppercase;
+  @media (max-width: $md2+px) {
+    font-size: 8px;
+  }
+  @media (max-width: $md4+px) {
+    letter-spacing: 5px;
+  }
 }
 .header-logo__image {
   display: inline-block;
   margin: 13px 0px 22px 0px;
+  @media (max-width: $md2+px) {
+    margin: 2px 0px 5px 0px;
+    img {
+      width: 150px;
+    }
+  }
+  @media (max-width: $md4+px) {
+    img {
+      margin: 0px 0px 2px 0px;
+      width: 100px;
+    }
+  }
 }
 
-//=====================================================
+//=========================================================================
 
 // заготовка для бургера
 .header-menu__icon {
@@ -137,6 +205,7 @@ header {
         bottom: 0;
       }
     }
+    // превращение бургера в крестик
     &:active {
       span {
         @include scale(0);
@@ -151,4 +220,24 @@ header {
       }
     }
   }
-} ;
+  // обращаемся в media запросе 2го брейкпоинта
+  // div .header-burger растянут на всю область. он белым цветом перекрывет всё остальное. для того чтоб др. эл. были видны пропишим им индекс (header-logo и header-top__link)
+  .header-burger {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #fff;
+    padding: 65px 10px 0px 10px;
+    // для маленьмих экранов делаем скрол чтоб была возможность добраться до нижних пунктов
+    overflow: auto;
+    // плавное выдвижение меню бургера
+    @include anim(0.5s, 0s);
+    // скрываем меню
+    left: -120%;
+    // возвращаем меню назад
+    &.active {
+      left: 0;
+    }
+  }
+}
