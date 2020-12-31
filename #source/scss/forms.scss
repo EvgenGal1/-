@@ -1,0 +1,90 @@
+//<ФАЙЛ СТИЛЕЙ КНОПОК, SELECTOV, И ДП.>=============================================
+//<FORM (a.f+tab)>==================================================================
+.form {
+  font-family: inherit;
+}
+.form-row {
+  @include flexbox();
+  margin: 0px -15px;
+}
+.form__column {
+  padding: 0px 15px;
+}
+.form-input {
+  font-family: inherit;
+}
+.form-button {
+  font-family: inherit;
+}
+//</FORM>===========================================================================
+
+//<BUTTONS (a.f+tab)>==================================================================
+.btn {
+  display: inline-block;
+  padding: 0px 0px;
+  &:hover {
+    font-family: inherit;
+  }
+  &.fw {
+    width: 100%;
+  }
+}
+//</BUTTONS>===========================================================================
+
+//<SELECT (sel+tab)>==================================================================
+.select-block {
+  position: relative;
+}
+.select__label {
+  z-index: 2;
+  position: absolute;
+  top: -8px;
+  background-color: #f7f7f7;
+  padding: 0px 5px;
+  color: #979797;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: inherit;
+}
+.select {
+  position: relative;
+  cursor: pointer;
+  .select-title {
+    z-index: 1;
+    width: 100%;
+    height: 55px;
+    border: 1 solid #dedede;
+    position: relative;
+    background-color: #fff;
+  }
+  .select-title__arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 100%;
+    background: url("../img/icon/select-arrow.svg") center no-repeat;
+  }
+  .select-title__value {
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 53;
+    display: block;
+    overflow: hidden;
+    padding: 0px 45px 0px 25px;
+    white-space: nowrap;
+    text-transform: none;
+    text-overflow: ellipsis;
+  }
+  .select-options {
+    position: absolute;
+    z-index: 10;
+    top: 54px;
+    display: none;
+    overflow: hidden;
+    min-width: 100%;
+    background-color: #fff;
+  }
+}
+//</SELECT>===========================================================================
