@@ -1,4 +1,4 @@
-//<ШАПКА>=====================================================
+//<(header.scss)ШАПКА>===============================================================
 header {
   padding: 29px 0px 33px 0px;
   background-color: #fff;
@@ -13,10 +13,14 @@ header {
   @include flexbox();
   // разброс в разные стороны
   justify-content: space-between;
-  // появился после адаптива для выравнивания с бургером
-  padding: 15px 0px 0px 0px;
+
   @media (max-width: $md2+px) {
     justify-content: flex-end;
+    // появился после адаптива для выравнивания с бургером
+    padding: 25px 0px 0px 0px;
+  }
+  @media (max-width: $md4+px) {
+    padding: 15px 0px 0px 0px;
   }
 }
 .header-top-lang {
@@ -64,6 +68,9 @@ header {
   align-items: center;
   @media (max-width: $md2+px) {
     // было -12. увеличели на 15 изза padding: 15 в .header-top
+    margin: -37px 0px 0px 0px;
+  }
+  @media (max-width: $md4+px) {
     margin: -27px 0px 0px 0px;
   }
 }
@@ -183,7 +190,7 @@ header {
   .header-menu__icon {
     display: block;
     position: absolute;
-    top: 18px;
+    top: 28px;
     left: 10px;
     width: 30px;
     height: 18px;
@@ -225,6 +232,7 @@ header {
   .header-burger {
     position: fixed;
     width: 100%;
+    width: 30%;
     height: 100%;
     top: 0;
     background-color: #fff;
@@ -241,3 +249,9 @@ header {
     }
   }
 }
+@media (max-width: $md4+px) {
+  .header-menu__icon {
+    top: 18px;
+  }
+}
+//</(header.scss)ШАПКА>===============================================================

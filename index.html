@@ -81,30 +81,33 @@
       <div class="content">
         <div class="private">
           <div class="private__column">
-            <div class="private__image">
-              <img src="img/block_1/01.jpg" alt="" />;
+            <div class="private__image ibg">
+              <!-- так как картинка контентная, и часто будет меняться то замена её через css будет не удобна (напр. background). распологаем через html и применяем класс ibg. IBG (класс от фри.по.жиз.) - этот класс, через JS, обраб картинку которая, находиться внутри оболочки с этим классом, и делает её фоном, при этом сама картинка в html (можно из кода менять картинку, устанавливать позиционирование css по макету)   -->
+              <img src="/img/block_1/01.jpg" alt="" />;
             </div>
           </div>
           <div class="private__column">
             <!-- коробка боди для внутренего контента -->
             <div class="private-body">
-              <div class="private-body__title">Private catering</div>
-              <div class="private-body__text">
-                Treat your guests to a beautifully plated dinner, hand-crafted
-              </div>
-              <div class="private-body-buttons">
-                <!-- доп класс btm для описания сразу всех схожих классов. здесь кнопка. белая.-->
-                <a href="" class="private-body-buttons__item btm btm--w"
-                  >Get a quote</a
-                >
-                <a href="" class="private-body-buttons__link">View menus</a>
+              <div class="private-body-content">
+                <div class="private-body__title">Private catering</div>
+                <div class="private-body__text">
+                  Treat your guests to a beautifully plated dinner, hand-crafted
+                </div>
+                <div class="private-body-buttons">
+                  <!-- доп класс btm для описания сразу всех схожих классов. здесь кнопка. белая.-->
+                  <a href="" class="private-body-buttons__item btn btn--w"
+                    >Get a quote</a
+                  >
+                  <a href="" class="private-body-buttons__link">View menus</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="menu-prod"></div>
+        <!-- <div class="menu-prod"></div>
         <div class="why"></div>
-        <div class="menu-cont"></div>
+        <div class="menu-cont"></div> -->
       </div>
       
     </div>

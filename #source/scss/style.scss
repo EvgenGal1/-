@@ -1,4 +1,4 @@
-//<ФАЙЛ ВСЕХ СТИЛЕЙ (ОБЪЕДИНЕНИЕ) + СДАНДАРТНЫЕ НАСТРОЙКИ>===================================
+//<(style.scss)ФАЙЛ ВСЕХ СТИЛЕЙ (ОБЪЕДИНЕНИЕ) + СДАНДАРТНЫЕ НАСТРОЙКИ>===================================
 // <МИКСИНЫ>
 @mixin anim($time, $delay) {
   -webkit-transition: all $time ease $delay;
@@ -237,26 +237,80 @@ h6 {
 }
 //</ОСНОВНАЯ СЕТКА>
 
+//<ОСНОВНОЙ БЛОК>
+.private {
+  @include flexbox();
+  background-color: #000;
+}
+.ibg {
+  background-position: 0 center;
+  background-size: cover;
+  background-repeat: space;
+}
+.ibg img {
+  display: none;
+}
+
+.private__column {
+  flex: 0 0 50%;
+}
+// так как картинка контентная, и часто будет меняться то замена её через css будет не удобна (напр. background). распологаем через html и применяем класс ibg.
+// IBG (класс от фри.по.жиз.) - этот класс, через JS, обраб картинку, которая находиться внутри оболочки с этим классом, и делает её фоном, при этом сама картинка в html (можно из кода менять картинку, устанавливать позиционирование css по макету)
+.private__image {
+  height: 100%;
+}
+.private-body {
+  padding: 75px 0px 75px 60px;
+}
+.private-body-content {
+  max-width: 305px;
+}
+.private-body__title {
+  font-family: $fontfamily2;
+  font-size: 50px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0px 0px 30px 0px;
+}
+.private-body__text {
+  font-size: 15px;
+  line-height: 25px;
+  color: #fff;
+  margin: 0px 0px 5px 0px;
+}
+.private-body-buttons {
+  @include flexbox();
+  align-items: center;
+}
+.private-body-buttons__item {
+}
+.private-body-buttons__link {
+  font-family: $fontfamily1;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: underline;
+  margin: 0px 0px 0px 15px;
+  letter-spacing: 1.5px;
+}
+//=========================================
+//</ОСНОВНОЙ БЛОК>
+
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>
 // @import "datepicker.scss";
 // @import "popover.scss";
 // @import "baguetteBox.scss";
 // @import "pagging.scss";
-
 @import "header.scss";
-
-//@import "header.scss";
-
 // @import "footer.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>
 
-//<ОСНОВНОЙ БЛОК>
-//=========================================
-//</ОСНОВНОЙ БЛОК>
-
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>
-// @import "forms.scss";
+@import "forms.scss";
 // @import "ui.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>
 
 // /*------------------------------------------------------------------------------*/
+
+//</(style.scss)ФАЙЛ ВСЕХ СТИЛЕЙ (ОБЪЕДИНЕНИЕ) + СДАНДАРТНЫЕ НАСТРОЙКИ>===================================

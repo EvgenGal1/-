@@ -1,4 +1,4 @@
-//<ФАЙЛ СТИЛЕЙ КНОПОК, SELECTOV, И ДП.>=============================================
+//<(forms.scss)ФАЙЛ СТИЛЕЙ КНОПОК, SELECTOV, И ДП.>=============================================
 //<FORM (a.f+tab)>==================================================================
 .form {
   font-family: inherit;
@@ -20,8 +20,21 @@
 
 //<BUTTONS (a.f+tab)>==================================================================
 .btn {
+  height: 50px;
+  line-height: 50px;
+  background-color: #000;
+  color: #fff;
   display: inline-block;
-  padding: 0px 0px;
+  padding: 0px 33px;
+  // padding: 18px 33px 17px 33px;
+  font-size: 15px;
+  font-family: $fontfamily1;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  &--w {
+    background-color: #fff;
+    color: #000;
+  }
   &:hover {
     font-family: inherit;
   }
@@ -88,3 +101,4 @@
   }
 }
 //</SELECT>===========================================================================
+//</(forms.scss)ФАЙЛ СТИЛЕЙ КНОПОК, SELECTOV, И ДП.>=============================================
