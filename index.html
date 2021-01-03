@@ -83,7 +83,7 @@
           <div class="private__column">
             <div class="private__image ibg">
               <!-- так как картинка контентная, и часто будет меняться то замена её через css будет не удобна (напр. background). распологаем через html и применяем класс ibg. IBG (класс от фри.по.жиз.) - этот класс, через JS, обраб картинку которая, находиться внутри оболочки с этим классом, и делает её фоном, при этом сама картинка в html (можно из кода менять картинку, устанавливать позиционирование css по макету)   -->
-              <img src="/img/block_1/01.jpg" alt="" />;
+              <img src="/img/private/01.jpg" alt="" />;
             </div>
           </div>
           <div class="private__column">
@@ -99,14 +99,109 @@
                   <a href="" class="private-body-buttons__item btn btn--w"
                     >Get a quote</a
                   >
-                  <a href="" class="private-body-buttons__link">View menus</a>
+                  <a href="" class="private-body-buttons__link link"
+                    >View menus</a
+                  >
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="menu-prod"></div>
-        <div class="why"></div>
+        <!-- .products>.container>.products-body>.products__column*4>.products-item>a.products-item__image+a.products-item__title+.products-item__text+a.products-item__btn.btn+a.products-item__link -->
+        <div class="products">
+          <!-- container - ограничивающий контайнер так как блок ограничен шириной (как и шапка)-->
+          <div class="container">
+            <div class="products-body">
+              <!-- лучше сверстать один блок, смотреть результат, и только потом скопировать остальное -->
+              <div class="products__column">
+                <div class="products-item">
+                  <!-- картинка ссылка -->
+                  <a href="" class="products-item__image ibg"
+                    ><img src="../img/products/01.jpg" alt="" />;</a
+                  >
+                  <!-- заголовок ссылка -->
+                  <a href="" class="products-item__title">Corporaty catering</a>
+                  <!-- текст -->
+                  <div class="products-item__text">
+                    We are able to serve events from 2 to 2000 guests and always
+                    reasonable prices.
+                  </div>
+                  <!-- кнопка ссылка. т.к. они строчный, они идут в ряд, можно закрыть их в параграф <p> -->
+                  <p>
+                    <a href="" class="products-item__btn btn">Get a quote</a>
+                  </p>
+                  <!-- ссылка. т.к. они строчный, они идут в ряд, можно закрыть их в параграф <p> -->
+                  <p>
+                    <a href="" class="products-item__link link link--b"
+                      >View menus</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="products__column">
+                <div class="products-item">
+                  <a href="" class="products-item__image ibg"
+                    ><img src="../img/products/02.jpg" alt="" />;</a
+                  >
+                  <a href="" class="products-item__title">Private catering</a>
+                  <div class="products-item__text">
+                    Fresh, seasonal and simple cuisine. Food is our business and
+                    our passion.
+                  </div>
+                  <p>
+                    <a href="" class="products-item__btn btn">Get a quote</a>
+                  </p>
+                  <p>
+                    <a href="" class="products-item__link link link--b"
+                      >View menus</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="products__column">
+                <div class="products-item">
+                  <a href="" class="products-item__image ibg"
+                    ><img src="../img/products/03.jpg" alt="" />;</a
+                  >
+                  <a href="" class="products-item__title">Wedding catering</a>
+                  <div class="products-item__text">
+                    We use only the best organic ingredients and gluten and
+                    dairy free cooking.
+                  </div>
+                  <p>
+                    <a href="" class="products-item__btn btn">Get a quote</a>
+                  </p>
+                  <p>
+                    <a href="" class="products-item__link link link--b"
+                      >View menus</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="products__column">
+                <div class="products-item">
+                  <a href="" class="products-item__image ibg"
+                    ><img src="../img/products/04.jpg" alt="" />;</a
+                  >
+                  <a href="" class="products-item__title">Online Ordering</a>
+                  <div class="products-item__text">
+                    Successful catering is about organisation, high quality
+                    service, and great food.
+                  </div>
+                  <p>
+                    <a href="" class="products-item__btn btn">Get a quote</a>
+                  </p>
+                  <p>
+                    <a href="" class="products-item__link link link--b"
+                      >View menus</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="why"></div>
         <div class="menu-cont"></div> -->
       </div>
       

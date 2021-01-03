@@ -28,8 +28,8 @@ function adaptive_function(width) {
   var headerLang = $(".header-top-lang");
   // класс меню
   var headerMenu = $(".header-bottom-menu");
-  // е\и ширина меньше 751
-  if (width < 751) {
+  // е\и ширина меньше 768
+  if (width < 768) {
     // е\и в языках нет класса done
     if (!headerLang.hasClass("done")) {
       // то блоку header-top-lang добавит класс "done" и добавить его в блок header-burger
@@ -42,8 +42,8 @@ function adaptive_function(width) {
       headerLang.removeClass("done").prependTo($(".header-top"));
     }
   }
-  // е\и ширина меньше 751
-  if (width < 751) {
+  // е\и ширина меньше 768
+  if (width < 768) {
     // е\и у меню нет класса done
     if (!headerMenu.hasClass("done")) {
       // то блоку header-bottom-menu добавит класс "done" и добавить его в блок header-burger
@@ -86,7 +86,7 @@ function adaptive_function(width) {
 
 // forms.js =====================================================================================
 
-// script.js =====================================================================================
+// <script.js> =====================================================================================
 
 // burger. нажатие на кнопку, приписка класса, скролл
 // при нажатии на бургер классу header-burger добавиться класс active
@@ -104,13 +104,15 @@ $(".header-menu__icon").click(function (event) {
 
 // так как картинка контентная, и часто будет меняться то замена её через css будет не удобна (напр. background). распологаем через html и применяем класс ibg.
 // IBG (класс от фри.по.жиз.) - этот класс, через JS, обраб картинку которая, находиться внутри оболочки с этим классом, и делает её фоном, при этом сама картинка в html (можно из кода менять картинку, устанавливать позиционирование css по макету)
+// .ibg - класс совместный с функцией JS, для переделки пути картинки из img в html, в фон родительского блока, с помощью css и js. Дляя появления картинки, блоку с картинкой прописать высоту. Для удобной замены картинок
+// Адаптированость по высоте изза равнения на родителя. Возможность применять картинки с различными размерами. Картинки подстраиваються под размер уже прописаного блока
 // 1:10:11 и 1:11:38 и 1:17:00 код у фриПоЖиз
 function ibg() {
   $.each($(".ibg"), function (index, val) {
     if ($(this).find("img").length > 0) {
       $(this).css({
         "background-image": 'url("' + $(this).find("img").attr("src") + '")',
-        // или адрес указать "url('../../img/block_1/01.jpg')",
+        // или адрес указать "url('../../img/private/01.jpg')",
       });
     }
   });
@@ -119,7 +121,7 @@ ibg();
 // попытка на JS
 // function ibg() {
 //   var privClass = document.getElementsByClassName("private__image");
-//   privClass[0].style.backgroundImage = "url('../../img/block_1/01.jpg')";
+//   privClass[0].style.backgroundImage = "url('../../img/private/01.jpg')";
 //   // if (getPrivClass) {
 //   //   var getImgTag = document.body.getElementsByTagName("img");
 //   //   var getIbg = document.body.getElementsByClassName("ibg");
@@ -308,6 +310,8 @@ ibg();
 //     var eq = $(this).parent().index();
 //   }
 // });
+
+// </script.js> =====================================================================================
 
 // js-end.js =====================================================================================
 

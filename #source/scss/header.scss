@@ -56,7 +56,7 @@ header {
   @media (max-width: $md4+px) {
     font-size: 13px;
     // моё
-    // добавил бы тег br через js или css в "header-top__link">Online <br> ordering, чтоб сократить длине самой ссылки
+    // добавил бы тег br через js или css в "header-top__link">Online <br> ordering, чтоб сократить длину самой ссылки
     // выровнял бы по высоте ссылку с бургером
     // position: absolute;
     // margin-top: 12px;
@@ -226,9 +226,7 @@ header {
     }
   }
   @media (max-width: $md4+px) {
-    .header-menu__icon {
-      top: 18px;
-    }
+    top: 18px;
   }
 }
 // div.header-burger растянут на всю область. он белым цветом перекрывет всё остальное. для того чтоб др. эл. были видны пропишим им индекс (header-logo и header-top__link)

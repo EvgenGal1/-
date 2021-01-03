@@ -114,20 +114,11 @@ h6 {
   width: 100%; }
   @media (max-width: 892px) {
     .container {
-      max-width: 750px; } }
-  @media (max-width: 750px) {
+      max-width: 767px; } }
+  @media (max-width: 767.98px) {
     .container {
       max-width: none;
       padding: 0 10px; } }
-
-.private {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  font-size: 0;
-  background-color: #000; }
 
 .ibg {
   background-position: 0 center;
@@ -136,11 +127,35 @@ h6 {
   .ibg img {
     display: none; }
 
+.link {
+  color: #fff;
+  font-size: 15px;
+  font-family: "Bebas";
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 1.5px;
+  line-height: 1.67; }
+  .link--b {
+    color: #000; }
+
+.private {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  background-color: #000;
+  margin: 0px 0px 75px 0px; }
+  @media (max-width: 767.98px) {
+    .private {
+      margin: 0px 0px 40px 0px; } }
+
 .private__column {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .private__column {
       -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
@@ -193,18 +208,106 @@ h6 {
   align-items: center; }
 
 .private-body-buttons__link {
-  font-family: "Bebas";
+  margin: 0px 0px 0px 15px; }
+
+.products {
+  margin: 0px 0px 40px 0px; }
+  @media (max-width: 767.98px) {
+    .products {
+      margin: 0; } }
+
+.products-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0; }
+  @media (max-width: 767.98px) {
+    .products-body {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+
+.products__column {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  margin: 0px 0px 40px 0px; }
+  @media (max-width: 767.98px) {
+    .products__column {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%; } }
+  @media (max-width: 380px) {
+    .products__column {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+      flex: 1 1 100%; } }
+
+.products-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%; }
+
+.products-item__image {
+  display: block;
+  padding: 0px 0px 102% 0px;
+  margin: 0px 0px 25px 0px; }
+  @media (max-width: 380px) {
+    .products-item__image {
+      margin: 0px 0px 15px 0px; } }
+
+.products-item__title {
+  font-family: "AkzidenzGroteskBQ-BdCnd";
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
+  font-size: 25px;
+  margin: 0px 0px 30px 0px;
+  padding: 0px 10px 0px 0px;
+  max-width: 185px;
+  display: block;
+  height: 50px;
+  overflow: hidden; }
+  @media (max-width: 380px) {
+    .products-item__title {
+      max-width: none;
+      height: auto;
+      overflow: visible;
+      margin: 0px 0px 20px 0px; } }
+
+.products-item__text {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  max-width: 185px;
   font-size: 15px;
-  text-decoration: underline;
-  margin: 0px 0px 0px 15px;
-  letter-spacing: 1.5px; }
+  margin: 0px 0px 25px 0px;
+  padding: 0px 10px 0px 0px;
+  line-height: 25px; }
+  @media (max-width: 380px) {
+    .products-item__text {
+      max-width: none;
+      margin: 0px 0px 15px 0px; } }
+
+.products-item__btn {
+  margin: 0px 0px 29px 0px; }
+
+.products-item__link {
+  margin: 0px 0px 0px 0px; }
 
 header {
   padding: 29px 0px 33px 0px;
   background-color: #fff; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     header {
       padding: 5px 0px 5px 0px; } }
 
@@ -218,7 +321,7 @@ header {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-top {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -235,7 +338,7 @@ header {
   display: -webkit-flex;
   display: flex;
   font-size: 0; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-top-lang {
       margin: 0px 0px 15px 0px; } }
 
@@ -276,7 +379,7 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-bottom {
       margin: -37px 0px 0px 0px; } }
   @media (max-width: 479.98px) {
@@ -307,7 +410,7 @@ header {
     @media (max-width: 892px) {
       .header-bottom-menu--right .header-bottom-menu-list li {
         margin: 0px 0px 0px 20px !important; } }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-bottom-menu--right .header-bottom-menu-list {
       display: block;
       text-align: left; }
@@ -330,7 +433,7 @@ header {
     @media (max-width: 892px) {
       .header-bottom-menu-list li {
         margin: 0px 20px 0px 0px; } }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-bottom-menu-list {
       display: block; }
       .header-bottom-menu-list li {
@@ -358,7 +461,7 @@ header {
   letter-spacing: 8px;
   color: #000;
   text-transform: uppercase; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-logo__text {
       font-size: 8px; } }
   @media (max-width: 479.98px) {
@@ -368,7 +471,7 @@ header {
 .header-logo__image {
   display: inline-block;
   margin: 13px 0px 22px 0px; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-logo__image {
       margin: 2px 0px 5px 0px; }
       .header-logo__image img {
@@ -380,7 +483,7 @@ header {
 
 .header-menu__icon {
   display: none; }
-  @media (max-width: 750px) {
+  @media (max-width: 767.98px) {
     .header-menu__icon {
       display: block;
       position: absolute;
@@ -436,10 +539,10 @@ header {
           transform: rotate(45deg);
           bottom: 8px; } }
   @media (max-width: 479.98px) {
-    .header-menu__icon .header-menu__icon {
+    .header-menu__icon {
       top: 18px; } }
 
-@media (max-width: 750px) {
+@media (max-width: 767.98px) {
   .header-burger {
     position: fixed;
     width: 100%;

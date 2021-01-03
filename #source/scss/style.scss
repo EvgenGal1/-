@@ -46,6 +46,7 @@
 @mixin tr($x, $y, $z) {
   transform: translate3d($x, $y, $z);
 }
+// изначально убирает все текста (font-size: 0), убирает все "фантомные отступы блоков"
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -101,7 +102,7 @@ $mw: 880;
 $md1: $mw + 12;
 // до бургера
 // $md2: 992.98;
-$md2: 750;
+$md2: 767.98;
 $md3: 767.98;
 $md4: 479.98;
 // </ПЕРЕМЕННЫЕ>
@@ -225,9 +226,9 @@ h6 {
   // @media (max-width: $md1+px) {
   //   max-width: 970px;
   // }
-  // ширина container на 1ом брейк станет 750
+  // ширина container на 1ом брейк станет 767
   @media (max-width: $md1+px) {
-    max-width: 750px;
+    max-width: 767px;
   }
   // при 768 будет схлоп в бургер
   @media (max-width: $md2+px) {
@@ -235,19 +236,40 @@ h6 {
     padding: 0 10px;
   }
 }
-//</ОСНОВНАЯ СЕТКА>
+//</ОСНОВНАЯ СЕТКА>==========================================================
 
-//<ОСНОВНОЙ БЛОК>
-.private {
-  @include flexbox();
-  background-color: #000;
-}
+//<ОСНОВНОЙ БЛОК>==========================================================
+//<ПЕРВЫЙ БЛОК>==========================================
+// .ibg - класс совместный с функцией JS, для переделки пути картинки из img в html, в фон родительского блока, с помощью css и js. Дляя появления картинки, блоку с картинкой прописать высоту. Для удобной замены картинок
+// Адаптированость по высоте изза равнения на родителя. Возможность применять картинки с различными размерами. Картинки подстраиваються под размер уже прописаного блока
 .ibg {
   background-position: 0 center;
   background-size: cover;
   background-repeat: space;
   img {
     display: none;
+  }
+}
+// класс ссылок
+.link {
+  color: #fff;
+  font-size: 15px;
+  font-family: $fontfamily1;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 1.5px;
+  line-height: 1.67;
+  &--b {
+    color: #000;
+  }
+}
+
+.private {
+  @include flexbox();
+  background-color: #000;
+  margin: 0px 0px 75px 0px;
+  @media (max-width: $md2+px) {
+    margin: 0px 0px 40px 0px;
   }
 }
 
@@ -299,19 +321,109 @@ h6 {
   @include flexbox();
   align-items: center;
 }
-.private-body-buttons__item {
-}
+// .private-body-buttons__item {
+// }
 .private-body-buttons__link {
-  font-family: $fontfamily1;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 15px;
-  text-decoration: underline;
   margin: 0px 0px 0px 15px;
-  letter-spacing: 1.5px;
 }
+//</ПЕРВЫЙ БЛОК>==================================
+
+//<ВТОРОЙ БЛОК>====================================
+.products {
+  // отступ перед след блоком поделен пополам. вторая часть в products__column
+  margin: 0px 0px 40px 0px;
+  @media (max-width: $md2+px) {
+    margin: 0;
+  }
+}
+.products-body {
+  @include flexbox();
+  @media (max-width: $md2+px) {
+    // даёт возможность менять блоки, отлепляет их др от др
+    flex-wrap: wrap;
+  }
+}
+.products__column {
+  flex: 0 0 25%;
+  // отступ перед след блоком. вторая часть в products. так же отступ между внутреними блоками
+  margin: 0px 0px 40px 0px;
+  @media (max-width: $md2+px) {
+    flex: 0 0 50%;
+  }
+  @media (max-width: 380px) {
+    flex: 1 1 100%;
+  }
+}
+// чтоб кнопки не зависили от кол-ва текста и были в одном месте, "приживаем их текстом" к низу. и в .products-item__text - flex: 1 1 auto;
+.products-item {
+  @include flexbox();
+  flex-direction: column;
+  height: 100%;
+}
+// чтоб картинка появилась изза прописаного в классе ibg display:none, пропишем высоту.
+// Здесь нижний padding в %, адаптированость по высоте изза равнения на родителя.
+// Адаптированость по высоте изза равнения на родителя. Возможность применять картинки с различными размерами. Картинки подстраиваються под размер уже прописаного блока
+.products-item__image {
+  display: block;
+  padding: 0px 0px 102% 0px;
+  margin: 0px 0px 25px 0px;
+  @media (max-width: 380px) {
+    margin: 0px 0px 15px 0px;
+  }
+}
+.products-item__title {
+  font-family: $fontfamily2;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 25px;
+  margin: 0px 0px 30px 0px;
+  padding: 0px 10px 0px 0px;
+  max-width: 185px;
+  // ссылкам даем block или inline-block? иначе на них не будет действовать margin
+  display: block;
+  //для того чтоб не плисал title от количества букв, задаём высоту и скрываем не нужное
+  height: 50px;
+  overflow: hidden;
+  // убираем ограничение в ширине
+  @media (max-width: 380px) {
+    max-width: none;
+    // убираем высоту?
+    height: auto;
+    overflow: visible;
+    margin: 0px 0px 20px 0px;
+  }
+}
+.products-item__text {
+  flex: 1 1 auto;
+  max-width: 185px;
+  font-size: 15px;
+  margin: 0px 0px 25px 0px;
+  padding: 0px 10px 0px 0px;
+  // тоже самое
+  // line-height: 1.67;
+  line-height: 25px;
+  // убираем ограничение в ширине
+  @media (max-width: 380px) {
+    max-width: none;
+    margin: 0px 0px 15px 0px;
+  }
+}
+.products-item__btn {
+  margin: 0px 0px 29px 0px;
+}
+.products-item__link {
+  margin: 0px 0px 0px 0px;
+}
+//</ВТОРОЙ БЛОК>=================================================
+
+//<ТРЕТИЙ БЛОК>======================================================
+//</ТРЕТИЙ БЛОК>====================================================
+
+//<ЧЕТВЕРТЫЙ БЛОК>===============================================
+//</ЧЕТВЕРТЫЙ БЛОК>==============================================
 //=========================================
-//</ОСНОВНОЙ БЛОК>
+//</ОСНОВНОЙ БЛОК>=====================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>
 // @import "datepicker.scss";

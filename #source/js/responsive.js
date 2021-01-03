@@ -18,8 +18,8 @@ function adaptive_function(width) {
   var headerLang = $(".header-top-lang");
   // класс меню
   var headerMenu = $(".header-bottom-menu");
-  // е\и ширина меньше 751
-  if (width < 751) {
+  // е\и ширина меньше 768
+  if (width < 768) {
     // е\и в языках нет класса done
     if (!headerLang.hasClass("done")) {
       // то блоку header-top-lang добавит класс "done" и добавить его в блок header-burger
@@ -32,8 +32,8 @@ function adaptive_function(width) {
       headerLang.removeClass("done").prependTo($(".header-top"));
     }
   }
-  // е\и ширина меньше 751
-  if (width < 751) {
+  // е\и ширина меньше 768
+  if (width < 768) {
     // е\и у меню нет класса done
     if (!headerMenu.hasClass("done")) {
       // то блоку header-bottom-menu добавит класс "done" и добавить его в блок header-burger
