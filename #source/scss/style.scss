@@ -246,13 +246,19 @@ h6 {
   background-position: 0 center;
   background-size: cover;
   background-repeat: space;
-}
-.ibg img {
-  display: none;
+  img {
+    display: none;
+  }
 }
 
 .private__column {
   flex: 0 0 50%;
+  @media (max-width: $md2+px) {
+    flex: 1 1 100%;
+    &:first-child {
+      display: none;
+    }
+  }
 }
 // так как картинка контентная, и часто будет меняться то замена её через css будет не удобна (напр. background). распологаем через html и применяем класс ibg.
 // IBG (класс от фри.по.жиз.) - этот класс, через JS, обраб картинку, которая находиться внутри оболочки с этим классом, и делает её фоном, при этом сама картинка в html (можно из кода менять картинку, устанавливать позиционирование css по макету)
@@ -261,6 +267,9 @@ h6 {
 }
 .private-body {
   padding: 75px 0px 75px 60px;
+  @media (max-width: $md1+px) {
+    padding: 30px 20px 30px 30px;
+  }
 }
 .private-body-content {
   max-width: 305px;
@@ -272,12 +281,19 @@ h6 {
   text-transform: uppercase;
   color: #fff;
   margin: 0px 0px 30px 0px;
+  @media (max-width: 1px) {
+    font-size: 35px;
+    margin: 0px 0px 20px 0px;
+  }
 }
 .private-body__text {
   font-size: 15px;
   line-height: 25px;
   color: #fff;
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 50px 0px;
+  @media (max-width: $md1+px) {
+    margin: 0px 0px 30px 0px;
+  }
 }
 .private-body-buttons {
   @include flexbox();

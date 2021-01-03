@@ -6,7 +6,7 @@ header {
     padding: 5px 0px 5px 0px;
   }
 }
-//=====================================================
+//======================================================================================
 // перенос классов (вставить все классы из html) -> выделить всё в html -> ctrl+alt+1 (кратко) или 2 (развернуто) -> вставить в css
 .header-top {
   // миксин из style.scss сразу для разных браузеров
@@ -185,9 +185,7 @@ header {
 // заготовка для бургера
 .header-menu__icon {
   display: none;
-}
-@media (max-width: $md2+px) {
-  .header-menu__icon {
+  @media (max-width: $md2+px) {
     display: block;
     position: absolute;
     top: 28px;
@@ -227,9 +225,15 @@ header {
       }
     }
   }
-  // обращаемся в media запросе 2го брейкпоинта
-  // div .header-burger растянут на всю область. он белым цветом перекрывет всё остальное. для того чтоб др. эл. были видны пропишим им индекс (header-logo и header-top__link)
-  .header-burger {
+  @media (max-width: $md4+px) {
+    .header-menu__icon {
+      top: 18px;
+    }
+  }
+}
+// div.header-burger растянут на всю область. он белым цветом перекрывет всё остальное. для того чтоб др. эл. были видны пропишим им индекс (header-logo и header-top__link)
+.header-burger {
+  @media (max-width: $md2+px) {
     position: fixed;
     width: 100%;
     width: 30%;
@@ -249,9 +253,5 @@ header {
     }
   }
 }
-@media (max-width: $md4+px) {
-  .header-menu__icon {
-    top: 18px;
-  }
-}
+
 //</(header.scss)ШАПКА>===============================================================
