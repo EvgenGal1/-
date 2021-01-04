@@ -239,7 +239,7 @@ h6 {
 //</ОСНОВНАЯ СЕТКА>==========================================================
 
 //<ОСНОВНОЙ БЛОК>==========================================================
-//<ПЕРВЫЙ БЛОК>==========================================
+//<ПЕРВЫЙ БЛОК(private)>==========================================
 // .ibg - класс совместный с функцией JS, для переделки пути картинки из img в html, в фон родительского блока, с помощью css и js. Дляя появления картинки, блоку с картинкой прописать высоту. Для удобной замены картинок
 // Адаптированость по высоте изза равнения на родителя. Возможность применять картинки с различными размерами. Картинки подстраиваються под размер уже прописаного блока
 .ibg {
@@ -326,9 +326,9 @@ h6 {
 .private-body-buttons__link {
   margin: 0px 0px 0px 15px;
 }
-//</ПЕРВЫЙ БЛОК>==================================
+//</ПЕРВЫЙ БЛОК(private)>==================================
 
-//<ВТОРОЙ БЛОК>====================================
+//<ВТОРОЙ БЛОК(products)>====================================
 .products {
   // отступ перед след блоком поделен пополам. вторая часть в products__column
   margin: 0px 0px 40px 0px;
@@ -415,13 +415,166 @@ h6 {
 .products-item__link {
   margin: 0px 0px 0px 0px;
 }
-//</ВТОРОЙ БЛОК>=================================================
+//</ВТОРОЙ БЛОК(products)>=================================================
 
-//<ТРЕТИЙ БЛОК>======================================================
-//</ТРЕТИЙ БЛОК>====================================================
+//<ТРЕТИЙ БЛОК(why)>======================================================
+.why {
+}
+.why-top {
+  @include flexbox();
+  background-color: #000;
+}
+.why-top__column {
+  flex: 0 0 50%;
+  @media (max-width: $md1+px) {
+    flex: 1 1 100%;
+    &:last-child {
+      display: none;
+    }
+  }
+}
+.why-top__text {
+  color: #fff;
+  text-align: right;
+  font-family: $fontfamily2;
+  font-size: 50px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding: 55px 60px 55px 0px;
+  @media (max-width: $md1+px) {
+    padding: 30px 0px;
+    font-size: 40px;
+    text-align: center;
+  }
+  @media (max-width: $md2+px) {
+    padding: 20px 0px;
+    font-size: 30px;
+    // text-align: center;
+  }
+}
+.why-top__image {
+  height: 100%;
+}
+.why-body {
+  padding: 50px 0px 0px 0px;
+  background-color: #ebebeb;
+  @media (max-width: $md4+px) {
+    padding: 30px 0px 0px 0px;
+  }
+}
+.why-body-row {
+  @include flexbox();
+  flex-wrap: wrap;
+}
+.why-body__column {
+  flex: 0 0 50%;
+  margin: 0px 0px 50px 0px;
+  @media (max-width: $md2+px) {
+    flex: 1 1 100%;
+  }
+  @media (max-width: $md4+px) {
+    margin: 0px 0px 30px 0px;
+  }
+}
+.why-body-item {
+  @include flexbox();
+}
+.why-body-item__icon {
+  @include flexbox();
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  // ширина для flex колонок
+  flex: 0 0 100px;
+  @media (max-width: $md4+px) {
+    height: 80px;
+    flex: 0 0 80px;
+    padding: 15px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+.why-body-item-body {
+  @include flexbox();
+  flex: 1 1 100%;
+  padding: 0px 0px 0px 11px;
+  flex-direction: column;
+}
+.why-body-item-body__title {
+  flex: 1 1 auto;
+  font-family: $fontfamily2;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 25px;
+  @media (max-width: $md4+px) {
+    font-size: 20px;
+  }
+}
+.why-body-item-body__text {
+  font-size: 15px;
+  padding: 0px 15px 0px 0px;
+  line-height: 25px;
+}
+//</ТРЕТИЙ БЛОК(why)>====================================================
 
-//<ЧЕТВЕРТЫЙ БЛОК>===============================================
-//</ЧЕТВЕРТЫЙ БЛОК>==============================================
+//<ЧЕТВЕРТЫЙ БЛОК(contacts)>===============================================
+.contacts {
+}
+.contacts-top {
+}
+.contacts-title {
+}
+.contacts-body {
+}
+.contacts-body__column {
+}
+.contacts-body__item {
+}
+.contacts-body__item--1 {
+}
+.contacts-body__item--2 {
+}
+.contacts-body__item--3 {
+}
+.contacts-social {
+}
+.contacts-social__item {
+}
+.contacts-social__item--1 {
+}
+.contacts-social__item--2 {
+}
+.contacts-social__item--3 {
+}
+.contacts-social__item--4 {
+}
+.contacts-content {
+}
+.contacts-content__column {
+}
+.contacts-content__map {
+}
+.contacts-content-form {
+}
+.contacts-content-form__title {
+}
+.contacts-content-form-dody {
+}
+.contacts-content-form-line {
+}
+.input {
+}
+.contacts-content-form-button {
+}
+.contacts-content-form__btn {
+}
+.btn {
+}
+.btn--w {
+}
+//</ЧЕТВЕРТЫЙ БЛОК(contacts)>==============================================
 //=========================================
 //</ОСНОВНОЙ БЛОК>=====================================================
 
