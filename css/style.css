@@ -446,6 +446,12 @@ h6 {
   padding: 0px 15px 0px 0px;
   line-height: 25px; }
 
+.contacts-title {
+  font-family: "AkzidenzGroteskBQ-BdCnd";
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: 5px; }
+
 header {
   padding: 29px 0px 33px 0px;
   background-color: #fff; }
