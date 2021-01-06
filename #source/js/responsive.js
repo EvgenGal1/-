@@ -67,6 +67,7 @@ function adaptive_function(width) {
   }
 }
 
+//??? не работают картинки с этим кодом ???
 // function adaptive_function() {
 //   var w = $(window).outerWidth();
 //   var h = $(window).outerHeight();

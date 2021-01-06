@@ -2,6 +2,10 @@
 // сбор всех JS скриптов проекта
 // @prepros-append jq-start.js;
 // @prepros-append responsive.js;
+//// не работают карты
+// @prepros-append map.js;
+//// заместо не раб карты
+// @prepros-append yandexmap.js;
 // @prepros-append forms.js;
 // @prepros-append script.js;
 // @prepros-append jq-end.js;
@@ -77,6 +81,7 @@ function adaptive_function(width) {
   }
 }
 
+//??? не работают картинки с этим кодом ???
 // function adaptive_function() {
 //   var w = $(window).outerWidth();
 //   var h = $(window).outerHeight();
@@ -84,7 +89,82 @@ function adaptive_function(width) {
 // }
 // adaptive_function();
 
+//??? не работают картинки с этим кодом ???
+// function map(n) {
+//   google.maps.Map.prototype.setCenterWithOffset = function (
+//     latlng,
+//     offsetX,
+//     offsetY
+//   ) {
+//     var map = this;
+//     var ov = new google.maps.Map.OverlayView();
+//     ov.onAdd = function () {
+//       var proj = this.getProjection();
+//       var aPoint = proj.fromLatLngToCOntainerPixel(latlng);
+//       aPoint.x = aPoint.x + offsetX;
+//       aPoint.y = aPoint.y + offsetY;
+//       map.panTo(proj.fromCOntainerPixelToLatLng(aPoint));
+//       // map.setCenter(proj.fromCOntainerPixelToLatLng(aPoint));
+//     };
+//     ov.draw = function () {};
+//     ov.setMap(this);
+//   };
+//   var markers = new Array();
+//   var infowindow = new.google.maps.InfoWindow({
+//     // pixelOffset:new google.maps.Size(-230,250)
+//   });
+//   var location = [[new google.maps.latlng(53.819055, 8813694)]];
+//   var options = {
+//     zoom: 10,
+//     panControl: false,
+//     mapTypeControl: false,
+//     center: location[0][0],
+//     scrollwheel: false,
+//     mapTypeId: google.maps.mapTypeId.ROADMAP,
+//   };
+//   var map = new google.maps.Map(document.getElementById("map"), options);
+//   var icon = {
+//     url: "img/icons/map.svg",
+//     scaledSize: new google.maps.Size(18, 20),
+//     anchor: new google.maps.Point(9, 10),
+//   };
+//   for (var i = 0; i < location.length; i++) {
+//     var marker = new google.maps.Marker({
+//       // icon:icon,
+//       position: location[i][0],
+//       map: map,
+//     });
+//     markers.push(marker);
+//   }
+// }
+// if ($("#map").length > 0) {
+//   map();
+// }
+
+// заместо не раб карты
+var map;
+var marker;
+function initMap() {
+  map = new ymaps.Map("yandexmap", {
+    center: [56.039017, 92.894853],
+    zoom: 16,
+  });
+  marker = new ymaps.Placemark([56.039017, 92.894853], {
+    hintContent: "Расположение",
+    balloonContent: "Это наша организация",
+  });
+  map.geoObjects.add(marker);
+}
+ymaps.ready(initMap);
+
+// 2:29:37 списать forms.js
 // forms.js =====================================================================================
+//FORMS
+function forms() {
+  // SELECT
+  if ($("select").length > 0) {
+  }
+}
 
 // <script.js> =====================================================================================
 
