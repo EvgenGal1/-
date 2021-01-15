@@ -211,7 +211,7 @@ header {
       }
     }
     // превращение бургера в крестик
-    &:active {
+    &.active {
       span {
         @include scale(0);
         &:first-child {

@@ -5,34 +5,34 @@
   -webkit-transition: all $time ease $delay;
   -moz-transition: all $time ease $delay;
   -ms-transition: all $time ease $delay;
-  -o-transform: all $time ease $delay;
-  transform: all $time ease $delay;
+  -o-transition: all $time ease $delay;
+  transition: all $time ease $delay;
 }
 @mixin anim_cubic($time, $delay) {
   -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
   -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
   -ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
-  -o-transform: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
-  transform: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
 }
 @mixin rotate($deg) {
-  -webkit-transition: rotate($deg);
-  -moz-transition: rotate($deg);
-  -ms-transition: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
   -o-transform: rotate($deg);
   transform: rotate($deg);
 }
 @mixin scale($num) {
-  -webkit-transition: scale($num);
-  -moz-transition: scale($num);
-  -ms-transition: scale($num);
+  -moz-transform: scale($num);
+  -ms-transform: scale($num);
+  -webkit-transform: scale($num);
   -o-transform: scale($num);
   transform: scale($num);
 }
 @mixin skew($num) {
-  -webkit-transition: skewX($num);
-  -moz-transition: skewX($num);
-  -ms-transition: skewX($num);
+  -webkit-transform: skewX($num);
+  -moz-transform: skewX($num);
+  -ms-transform: skewX($num);
   -o-transform: skewX($num);
   transform: skewX($num);
 }
@@ -111,9 +111,9 @@ $md4: 479.98;
 
 // <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================
 * {
-  padding: 0;
-  margin: 0;
-  border: 0;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
 }
 *,
 *:before,
@@ -140,13 +140,12 @@ section {
 html,
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: $minwidth;
+  position: relative;
   width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  color: #000;
 }
 body {
   font-size: 100%;
@@ -200,8 +199,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
   font-weight: inherit;
+  font-size: inherit;
 }
 // -webkit-overflow-scrolling: touch;
 // animation-play-state: paused !importal;
@@ -240,32 +239,18 @@ h6 {
 }
 //</ОСНОВНАЯ СЕТКА>=====================================================================
 
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>======================================
+// @import "datepicker.scss";
+// @import "popover.min.scss";
+// @import "baguetteBox.scss";
+// @import "pagging.scss";
+@import "header.scss";
+@import "footer.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>=====================================
+
 //<ОСНОВНОЙ БЛОК>=======================================================================
 
 //<ПЕРВЫЙ БЛОК(private)>================================================================
-// .ibg - класс совместный с функцией JS, для переделки пути картинки из img в html, в фон родительского блока, с помощью css и js. Дляя появления картинки, блоку с картинкой прописать высоту. Для удобной замены картинок
-// Адаптированость по высоте изза равнения на родителя. Возможность применять картинки с различными размерами. Картинки подстраиваються под размер уже прописаного блока
-.ibg {
-  background-position: 0 center;
-  background-size: cover;
-  background-repeat: space;
-  img {
-    display: none;
-  }
-}
-// класс ссылок
-.link {
-  color: #fff;
-  font-size: 15px;
-  font-family: $fontfamily1;
-  text-transform: uppercase;
-  text-decoration: underline;
-  letter-spacing: 1.5px;
-  line-height: 1.67;
-  &--b {
-    color: #000;
-  }
-}
 
 .private {
   @include flexbox();
@@ -291,7 +276,7 @@ h6 {
   height: 100%;
 }
 .private-body {
-  padding: 75px 0px 75px 60px;
+  padding: 75px 20px 75px 60px;
   @media (max-width: $md1+px) {
     padding: 30px 20px 30px 30px;
   }
@@ -299,6 +284,7 @@ h6 {
 .private-body-content {
   max-width: 305px;
 }
+
 .private-body__title {
   font-family: $fontfamily2;
   font-size: 50px;
@@ -306,7 +292,7 @@ h6 {
   text-transform: uppercase;
   color: #fff;
   margin: 0px 0px 30px 0px;
-  @media (max-width: 1px) {
+  @media (max-width: $md1+px) {
     font-size: 35px;
     margin: 0px 0px 20px 0px;
   }
@@ -327,7 +313,13 @@ h6 {
 // .private-body-buttons__item {
 // }
 .private-body-buttons__link {
+  font-family: Bebas;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: underline;
   margin: 0px 0px 0px 15px;
+  letter-spacing: 1.5px;
 }
 //</ПЕРВЫЙ БЛОК(private)>==============================================================
 
@@ -360,21 +352,26 @@ h6 {
 // чтоб кнопки не зависили от кол-ва текста и были в одном месте, "приживаем их текстом" к низу. и в .products-item__text - flex: 1 1 auto;
 .products-item {
   @include flexbox();
-  flex-direction: column;
   height: 100%;
+  flex-direction: column;
 }
 // чтоб картинка появилась изза прописаного в классе ibg display:none, пропишем высоту.
 // Здесь нижний padding в %, адаптированость по высоте изза равнения на родителя.
 // Адаптированость по высоте изза равнения на родителя. Возможность применять картинки с различными размерами. Картинки подстраиваються под размер уже прописаного блока
 .products-item__image {
   display: block;
-  padding: 0px 0px 102% 0px;
+  padding: 0px 0px 100% 0px;
   margin: 0px 0px 25px 0px;
   @media (max-width: 380px) {
     margin: 0px 0px 15px 0px;
   }
 }
 .products-item__title {
+  height: 50px;
+  overflow: hidden;
+  padding: 0px 10px 0px 0px;
+  max-width: 185px;
+  display: block;
   font-family: $fontfamily2;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -399,10 +396,10 @@ h6 {
 }
 .products-item__text {
   flex: 1 1 auto;
+  padding: 0px 10px 0px 0px;
   max-width: 185px;
   font-size: 15px;
   margin: 0px 0px 25px 0px;
-  padding: 0px 10px 0px 0px;
   // тоже самое
   // line-height: 1.67;
   line-height: 25px;
@@ -416,7 +413,12 @@ h6 {
   margin: 0px 0px 29px 0px;
 }
 .products-item__link {
-  margin: 0px 0px 0px 0px;
+  font-family: Bebas;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
 }
 //</ВТОРОЙ БЛОК(products)>============================================================
 
@@ -452,7 +454,7 @@ h6 {
   @media (max-width: $md2+px) {
     padding: 20px 0px;
     font-size: 30px;
-    // text-align: center;
+    text-align: center;
   }
 }
 .why-top__image {
@@ -531,7 +533,7 @@ h6 {
 }
 // .contacts-top {
 // }
-.contacts-title {
+.contacts__title {
   font-family: $fontfamily2;
   text-transform: uppercase;
   font-size: 50px;
@@ -565,6 +567,7 @@ h6 {
 .contacts-body__item--3 {
   background: url("../../img/contacts/03.png") left no-repeat;
 }
+
 .contacts-social {
   @include flexbox();
 }
@@ -593,7 +596,7 @@ h6 {
   flex: 0 0 50%;
 }
 .contacts-content__map {
-  background-color: #f00;
+  // background-color: #f00;
   height: 100%;
   @media (max-width: $md2+px) {
     height: 300px;
@@ -613,7 +616,7 @@ h6 {
   letter-spacing: 5px;
   margin: 0px 0px 30px 0px;
 }
-.contacts-content-form-dody {
+.contacts-content-form-body {
   max-width: 375px;
   @media (max-width: $md2+px) {
     max-width: none;
@@ -638,18 +641,9 @@ h6 {
 
 //</ОСНОВНОЙ БЛОК>======================================================================
 
-//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>======================================
-// @import "datepicker.scss";
-// @import "popover.scss";
-// @import "baguetteBox.scss";
-// @import "pagging.scss";
-@import "header.scss";
-@import "footer.scss";
-//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЛЕМЕНТОВ>=====================================
-
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>=================================
 @import "forms.scss";
-// @import "ui.scss";
+@import "ui.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>================================
 
 // /*------------------------------------------------------------------------------*/
