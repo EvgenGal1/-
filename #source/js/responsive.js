@@ -1,25 +1,25 @@
 // responsive.js =====================================================================================
-// Adaptive function
+// Adaptive functions
 // скрипт при котором можно один блок при опред разрешении перекинуть внутрь другого блока
 
 // эл-ам window привязываем JavaScript обработчик событий "resize" (срабатывает при изменении размеров окна браузера), и запускает function adaptive_function с переданым параметром `окно. внутренняя ширина`
 $(window).resize(function (event) {
-  adaptive_function(window.innerWidth);
+  adaptive_function();
 });
 // запуск функции со слушателем изменения экрана без jQuery. тоже самое что с вурху
 // window.onresize = function (event) {
-//   adaptive_function(window.innerWidth);
+//   adaptive_function();
 // };
 
-function adaptive_function(width) {
+function adaptive_header(w, h) {
   // блок скрытого бургера
   var headerBurger = $(".header-burger");
   // класс языков
   var headerLang = $(".header-top-lang");
   // класс меню
   var headerMenu = $(".header-bottom-menu");
-  // е\и ширина меньше 768
-  if (width < 768) {
+  // е\и ширина меньше 767
+  if (w < 767) {
     // е\и в языках нет класса done
     if (!headerLang.hasClass("done")) {
       // то блоку header-top-lang добавит класс "done" и добавить его в блок header-burger
@@ -32,8 +32,8 @@ function adaptive_function(width) {
       headerLang.removeClass("done").prependTo($(".header-top"));
     }
   }
-  // е\и ширина меньше 768
-  if (width < 768) {
+  // е\и ширина меньше 767
+  if (w < 767) {
     // е\и у меню нет класса done
     if (!headerMenu.hasClass("done")) {
       // то блоку header-bottom-menu добавит класс "done" и добавить его в блок header-burger
@@ -67,10 +67,9 @@ function adaptive_function(width) {
   }
 }
 
-//??? не работают картинки с этим кодом ???
-// function adaptive_function() {
-//   var w = $(window).outerWidth();
-//   var h = $(window).outerHeight();
-//   adaptive_header(w, h);
-// }
-// adaptive_function();
+function adaptive_function() {
+  var w = $(window).outerWidth();
+  var h = $(window).outerHeight();
+  adaptive_header(w, h);
+}
+adaptive_function();

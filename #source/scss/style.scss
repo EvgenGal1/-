@@ -227,11 +227,11 @@ h6 {
   // @media (max-width: $md1+px) {
   //   max-width: 970px;
   // }
-  // ширина container на 1ом брейк станет 767
+  // ширина container на 1ом брейк станет 750
   @media (max-width: $md1+px) {
-    max-width: 767px;
+    max-width: 750px;
   }
-  // при 768 будет схлоп в бургер
+  // при 767 будет схлоп в бургер
   @media (max-width: $md2+px) {
     max-width: none;
     padding: 0 10px;
@@ -399,10 +399,10 @@ h6 {
   padding: 0px 10px 0px 0px;
   max-width: 185px;
   font-size: 15px;
-  margin: 0px 0px 25px 0px;
   // тоже самое
   // line-height: 1.67;
   line-height: 25px;
+  margin: 0px 0px 25px 0px;
   // убираем ограничение в ширине
   @media (max-width: 380px) {
     max-width: none;
@@ -439,12 +439,12 @@ h6 {
   }
 }
 .why-top__text {
-  color: #fff;
+  color: #ffffff;
   text-align: right;
   font-family: $fontfamily2;
   font-size: 50px;
-  letter-spacing: 5px;
   text-transform: uppercase;
+  letter-spacing: 5px;
   padding: 55px 60px 55px 0px;
   @media (max-width: $md1+px) {
     padding: 30px 0px;
@@ -486,15 +486,15 @@ h6 {
 }
 .why-body-item__icon {
   @include flexbox();
+  height: 100px;
   background-color: #000;
   justify-content: center;
   align-items: center;
-  height: 100px;
   // ширина для flex колонок
   flex: 0 0 100px;
   @media (max-width: $md4+px) {
-    height: 80px;
     flex: 0 0 80px;
+    height: 80px;
     padding: 15px;
     img {
       max-width: 100%;
@@ -502,10 +502,10 @@ h6 {
   }
 }
 .why-body-item-body {
-  @include flexbox();
   flex: 1 1 100%;
-  padding: 0px 0px 0px 11px;
+  @include flexbox();
   flex-direction: column;
+  padding: 0px 0px 0px 11px;
 }
 .why-body-item-body__title {
   flex: 1 1 auto;
@@ -552,11 +552,11 @@ h6 {
   }
 }
 .contacts-body__item {
-  display: inline-block;
   font-size: 15px;
   color: #000;
-  padding: 0px 0px 0px 35px;
+  display: inline-block;
   line-height: 27px;
+  padding: 0px 0px 0px 35px;
 }
 .contacts-body__item--1 {
   background: url("../../img/contacts/01.png") left no-repeat;
@@ -610,8 +610,8 @@ h6 {
 }
 .contacts-content-form__title {
   font-family: $fontfamily2;
-  color: #fff;
   text-transform: uppercase;
+  color: #fff;
   font-size: 25px;
   letter-spacing: 5px;
   margin: 0px 0px 30px 0px;
